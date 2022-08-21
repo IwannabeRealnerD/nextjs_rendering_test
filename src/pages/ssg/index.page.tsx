@@ -21,13 +21,8 @@ export async function getStaticProps() {
 }
 
 const SSG: NextPage = () => {
-  const { data } = useQuery(
-    ["SSG"],
-    () =>
-      fetch("https://swapi.dev/api/people/4").then((res) =>
-        res.json()
-      ),
-    { staleTime: Infinity }
+  const { data } = useQuery(["SSG"], () =>
+    fetch("https://swapi.dev/api/people/4").then((res) => res.json())
   );
 
   return (

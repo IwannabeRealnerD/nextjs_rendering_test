@@ -1,9 +1,16 @@
 import type { NextPage } from "next";
 import Head from "next/head";
-import { usePeopleData } from "../../RQQuery/People";
+import {
+  dehydrate,
+  QueryClient,
+  useQuery,
+} from "@tanstack/react-query";
 
 const CSR: NextPage = () => {
-  const { data } = usePeopleData();
+  const { data } = useQuery(["CSR"], () =>
+    fetch("https://swapi.dev/api/people/4").then((res) => res.json())
+  );
+
   return (
     <>
       <Head>

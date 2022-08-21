@@ -6,7 +6,7 @@ import {
   useQuery,
 } from "@tanstack/react-query";
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const queryClient = new QueryClient();
 
   await queryClient.prefetchQuery(["SSR"], () =>
@@ -21,13 +21,8 @@ export async function getStaticProps() {
 }
 
 const SSR: NextPage = () => {
-  const { data } = useQuery(
-    ["SSR"],
-    () =>
-      fetch("https://swapi.dev/api/people/4").then((res) =>
-        res.json()
-      ),
-    { staleTime: Infinity }
+  const { data } = useQuery(["SSR"], () =>
+    fetch("https://swapi.dev/api/people/4").then((res) => res.json())
   );
 
   return (

@@ -13,7 +13,15 @@ const Home: NextPage = () => {
         <section>
           <h1>Main</h1>
           메인페이지
-          <Link href="/ssg">ssg page</Link>
+          <div>
+            <Link href="/csr">CSR page</Link>
+          </div>
+          <div>
+            <Link href="/ssg">SSG page</Link>
+          </div>
+          <div>
+            <Link href="/ssr">SSR page</Link>
+          </div>
         </section>
       </main>
     </>

@@ -12,7 +12,12 @@ function RenderingTestApp({ Component, pageProps }: AppProps) {
   const [queryClient] = useState(
     () =>
       new QueryClient({
-        defaultOptions: { queries: { refetchOnWindowFocus: false } },
+        defaultOptions: {
+          queries: {
+            refetchOnWindowFocus: false,
+            staleTime: Infinity,
+          },
+        },
       })
   );
 
