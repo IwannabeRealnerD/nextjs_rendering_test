@@ -7,8 +7,8 @@ import {
 } from "@tanstack/react-query";
 
 export async function getServerSideProps() {
+  console.log("ssr working");
   const queryClient = new QueryClient();
-
   await queryClient.prefetchQuery(["SSR"], () =>
     fetch("https://swapi.dev/api/people/4").then((res) => res.json())
   );

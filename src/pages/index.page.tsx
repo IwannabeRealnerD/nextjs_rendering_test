@@ -13,15 +13,15 @@ const Home: NextPage = () => {
         <section>
           <h1>Main</h1>
           메인페이지
-          <div>
+          <div style={{ height: "30rem", backgroundColor: "yellow" }}>
             <Link href="/csr">CSR page</Link>
           </div>
-          <div>
+          <div style={{ height: "30rem", backgroundColor: "gray" }}>
             <Link href="/ssg">SSG page</Link>
           </div>
-          <div>
+          {/* <div style={{ height: "30rem", backgroundColor: "blue" }}>
             <Link href="/ssr">SSR page</Link>
-          </div>
+          </div> */}
         </section>
       </main>
     </>

@@ -5,6 +5,7 @@ import {
   QueryClient,
   useQuery,
 } from "@tanstack/react-query";
+import Link from "next/link";
 
 export async function getStaticProps() {
   const queryClient = new QueryClient();
@@ -31,6 +32,9 @@ const SSG: NextPage = () => {
         <title>SSG | nextjs rendering test site</title>
       </Head>
       <main>
+        <div style={{ height: "30rem", backgroundColor: "blue" }}>
+            <Link href="/ssr">SSR page</Link>
+          </div>
         <section>
           <h1>SSG</h1>
           {JSON.stringify(data)}
